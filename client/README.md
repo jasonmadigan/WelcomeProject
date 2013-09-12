@@ -1,7 +1,13 @@
 Do all the development work in the development directory. DO NOT make any changes in the default directory.
 
-To develop locally, run
+You need to install yeoman first
 
+    npm install -g yeoman
+
+To develop locally, inside the development directory run
+
+    npm install .
+    bower install
     grunt server
 
 It will automatically load index.html file in the browser and reload if anything changed.
