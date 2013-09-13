@@ -1,10 +1,10 @@
-Do all the development work in the development directory. DO NOT make any changes in the default directory.
+Do all the development work in the "app" directory. DO NOT make any changes in the default directory.
 
 You need to install yeoman first
 
     npm install -g yeoman
 
-To develop locally, inside the development directory run
+To develop locally, run
 
     npm install .
     bower install
@@ -16,4 +16,4 @@ When you are happy, run
 
     grunt
 
-to generate file for distribution and they will be copied to the default directory.
+to generate files for distribution and they will be copied to the default directory.
