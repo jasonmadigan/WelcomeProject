@@ -1,7 +1,7 @@
 /*global App, Backbone*/
 var initialize = function(){
   App.routers.mainRoute = new App.Router.MainRoute();
-  Backbone.history.start({pushState: true, root: '/index.html'});
+  Backbone.history.start({pushState: true});
 };
 
 //check if cordova is available
