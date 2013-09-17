@@ -1,0 +1,224 @@
+this["App"] = this["App"] || {};
+this["App"]["Templates"] = this["App"]["Templates"] || {};
+
+this["App"]["Templates"]["cloudcall"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += " <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
+  if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n    <p>";
+  if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n    <p><a class=\"btn btn-primary btn-lg cloud-action\"><i class=\"icon-external-link-sign\"></i> ";
+  if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a></p>\n  </div>\n  <div class=\"hidden\">\n    <div class=\"response_content\">\n    </div>\n  </div>\n</div>";
+  return buffer;
+  });
+
+this["App"]["Templates"]["databrowser"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += " <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
+  if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n    <p>";
+  if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n    <form>\n      <div class=\"form-group\">\n        <label class=\"sr-only\" for=\"nameField\">";
+  if (stack1 = helpers.inputFieldLabel) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.inputFieldLabel; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</label>\n        <input type=\"text\" class=\"form-control\" id=\"nameField\" placeholder=\"";
+  if (stack1 = helpers.inputFieldLabel) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.inputFieldLabel; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n      </div>\n    </form>\n    <p><a class=\"btn btn-primary btn-lg save-data\"><i class=\"icon-save\"></i> ";
+  if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a></p>\n    <div class=\"hidden\">\n      <p class=\"more-info\">\n        ";
+  if (stack1 = helpers.moreInfo) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.moreInfo; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n      </p>\n      </div>\n    </div>\n</div>";
+  return buffer;
+  });
+
+this["App"]["Templates"]["integration"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += " <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
+  if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n    <p>";
+  if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n  </div>\n</div>";
+  return buffer;
+  });
+
+this["App"]["Templates"]["intro"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <div class=\"col-xs-6 col-sm-4 ";
+  if (stack1 = helpers.responsiveClass) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.responsiveClass; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n    <div class=\"container start-menu-item ";
+  if (stack1 = helpers.className) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.className; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n      <a class=\"btn start-menu-item-icon btn-danger\">\n        <i class=\"icon-";
+  if (stack1 = helpers.iconClass) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.iconClass; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " icon-2x\"></i>\n      </a>\n      <h5>";
+  if (stack1 = helpers.menuTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.menuTitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h5>\n      <h6>";
+  if (stack1 = helpers.menuSubTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.menuSubTitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h6>\n    </div>\n  </div>\n  ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"banner well center text-center\">\n<h1>";
+  if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n<p>";
+  if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n</div>\n<div class=\"row\">\n  ";
+  stack1 = helpers.each.call(depth0, depth0.menuItems, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n</div>\n\n\n\n";
+  return buffer;
+  });
+
+this["App"]["Templates"]["navbar"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "style=\"width: ";
+  if (stack1 = helpers.titleWidth) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.titleWidth; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "px\"";
+  return buffer;
+  }
+
+  buffer += "<nav class=\"navbar navbar-default\" role=\"navigation\">\n<div class=\"nav pull-left\">\n  <a class=\"btn back\"><i class=\"icon-chevron-left icon-2x\"></i></a>\n</div>\n<div class=\"navbar-title\" ";
+  stack1 = helpers['if'].call(depth0, depth0.titleWidth, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += ">\n<p class=\"nav navbar-text\">";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n</div>\n</nav>";
+  return buffer;
+  });
+
+this["App"]["Templates"]["node"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += " <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
+  if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n    <p>";
+  if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n  </div>\n</div>";
+  return buffer;
+  });
+
+this["App"]["Templates"]["stats"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += " <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
+  if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n    <p>";
+  if (stack1 = helpers.text) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.text; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n  </div>\n</div>";
+  return buffer;
+  });
+
+this["App"]["Templates"]["weather"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += " <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
+  if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n    <p>";
+  if (stack1 = helpers.geoText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.geoText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n    <p><a class=\"btn btn-primary btn-lg get-geo-btn\"><i class=\"icon-location-arrow\"></i> ";
+  if (stack1 = helpers.geoButtonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.geoButtonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a></p>\n    <form>\n      <div class=\"form-group\">\n        <label class=\"sr-only\" for=\"locationField\">";
+  if (stack1 = helpers.geoLabelText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.geoLabelText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</label>\n        <input type=\"text\" class=\"form-control\" id=\"locationField\" placeholder=\"";
+  if (stack1 = helpers.geoLabelText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.geoLabelText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n      </div>\n    </form>\n    <div class=\"hidden\">\n      <p class=\"get-weather-text\">\n        ";
+  if (stack1 = helpers.getWeatherText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.getWeatherText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n      </p>\n      <p><a class=\"btn btn-primary btn-lg get-weather-btn\"><i class=\"icon-globe\"></i> ";
+  if (stack1 = helpers.getWeatherButtonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.getWeatherButtonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a></p>\n      <p class=\"weather-info\"></p>\n    </div>\n  </div>\n</div>";
+  return buffer;
+  });

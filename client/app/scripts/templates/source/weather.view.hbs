@@ -1,0 +1,20 @@
+ <div class="content_view">
+  <div class="container">
+    <h1>{{header}}</h1>
+    <p>{{geoText}}</p>
+    <p><a class="btn btn-primary btn-lg get-geo-btn"><i class="icon-location-arrow"></i> {{geoButtonText}}</a></p>
+    <form>
+      <div class="form-group">
+        <label class="sr-only" for="locationField">{{geoLabelText}}</label>
+        <input type="text" class="form-control" id="locationField" placeholder="{{geoLabelText}}">
+      </div>
+    </form>
+    <div class="hidden">
+      <p class="get-weather-text">
+        {{getWeatherText}}
+      </p>
+      <p><a class="btn btn-primary btn-lg get-weather-btn"><i class="icon-globe"></i> {{getWeatherButtonText}}</a></p>
+      <p class="weather-info"></p>
+    </div>
+  </div>
+</div>

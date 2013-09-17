@@ -22,11 +22,9 @@
 
 
         <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-        <!--
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="apple-mobile-web-app-title" content="">
-        -->
 
         <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
         <!--
@@ -36,6 +34,7 @@
         <!-- build:css(.tmp) css/main.css -->
         <link rel="stylesheet" href="css/mobile.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/app.css">
         <!-- endbuild -->
     </head>
     <body>
@@ -45,7 +44,7 @@
         <script src="js/helper.js"></script>
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/handlebars/handlebars.js"></script>
+        <script src="bower_components/handlebars/handlebars.runtime.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
         <script src="bower_components/bootstrap/js/affix.js"></script>
         <script src="bower_components/bootstrap/js/alert.js"></script>
@@ -62,10 +61,25 @@
         <!-- endbuild -->
 
         <!-- build:js scripts/app.js -->
-        <script src="js/models/model.js"></script>
-        <script src="js/controllers/controller.js"></script>
-        <script src="js/views/main.view.js"></script>
+        <script src="scripts/namespace.js"></script>
+        <script src="scripts/templates/generated/templates.js"></script>
+        <script src="scripts/routers/index.js"></script>
+        <script src="scripts/models/page.js"></script>
+        <script src="scripts/views/navbar.view.js"></script>
+        <script src="scripts/views/intro.view.js"></script>
+        <script src="scripts/views/viewbase.view.js"></script>
+        <script src="scripts/views/main.view.js"></script>
+        <script src="scripts/views/cloudcall.view.js"></script>
+        <script src="scripts/views/stats.view.js"></script>
+        <script src="scripts/views/nodepage.view.js"></script>
+        <script src="scripts/views/databrowser.view.js"></script>
+        <script src="scripts/views/weather.view.js"></script>
+        <script src="scripts/views/integration.view.js"></script>
+        <script src="scripts/init.js"></script>
         <!-- endbuild -->
+
+        <div id="main_page" class="page">
+        </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -75,7 +89,5 @@
             s.parentNode.insertBefore(g,s)}(document,"script"));
         </script>
 
-        <script id="main_view_template" type="text/x-handlebars-template">
-        </script>
     </body>
 </html>

@@ -1,0 +1,104 @@
+body 
+{
+  
+}
+
+#main_page
+{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#main_page .row
+{
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.banner {
+  background-color: #F50555;
+  color: #FFF;
+  border: none;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.banner h1 {
+  margin-top: 10px;
+}
+.banner p {
+  margin-bottom: 0px;
+}
+
+.start-menu-item {
+  height: 125px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.start-menu-item-icon {
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F50555;
+  border-radius: 50%;
+  display: block;
+  padding-top: 15px;
+}
+
+.start-menu-item h5 {
+  text-transform: uppercase;
+}
+
+.start-menu-item h5,h6 {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.navbar {
+  background-color: #F50555;
+  margin-bottom: 0px;
+  border: none;
+}
+
+.navbar-default .navbar-text {
+  color: #FFF;
+}
+
+.navbar .btn.back {
+  color: #FFF;
+  width: 75px;
+  height: 50px;
+  padding-top: 10px;
+}
+
+.navbar-title {
+  display: block;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1em;
+}
+
+.content_view {
+  background-color: #FFF;
+  padding: 15px;
+  text-align: center;
+}
+
+.content_view .btn {
+  display: block;
+}
+
+.btn-primary {
+  background-color: #F50555;
+  border-color: #EB0753;
+}
+
+.btn-primary:hover {
+  background-color: #DF1132;
+}

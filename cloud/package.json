@@ -1,0 +1,9 @@
+{
+  "name": "FeedHenry Welcome App",
+  "version": "0.0.1",
+  "dependencies": {
+    "fh-webapp" : "*",
+    "fh-api" : "*",
+    "express" : "3.3.4"
+  }
+}
