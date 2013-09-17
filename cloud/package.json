@@ -1,5 +1,5 @@
 {
-  "name": "FeedHenry Welcome App",
+  "name": "FHWelcomeApp",
   "version": "0.0.1",
   "dependencies": {
     "fh-webapp" : "*",
