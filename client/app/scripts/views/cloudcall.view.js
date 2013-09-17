@@ -1,4 +1,4 @@
-/*global App*/
+/*global App, _, $fh*/
 App.View.CloudcallView = App.View.BaseView.extend({
 
   template: App.Templates.cloudcall,
@@ -8,8 +8,22 @@ App.View.CloudcallView = App.View.BaseView.extend({
     'click .cloud-action': 'cloudCall'
   },
 
+  initialize: function(){
+    _.bindAll(this, 'gotData', 'dataError');
+  },
+
   cloudCall: function(){
-    //TODO: call $fh.act
+    var self = this;
+    $fh.act({act: 'hello', req: {}}, function(res){
+      self.gotData(res);
+    }, function(msg, err){
+      self.dataError(msg, err);
+    });
+  },
+
+  gotData: function(res){
     this.$el.find('.hidden').removeClass('hidden');
+    this.$el.find('.response_content').removeClass('alert-error').addClass('alert-success').html('Response: ' + res.text);
   }
+
 });

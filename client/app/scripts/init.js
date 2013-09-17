@@ -1,4 +1,4 @@
-/*global App, Backbone*/
+/*global App, Backbone, Handlebars*/
 var initialize = function(){
   App.routers.mainRoute = new App.Router.MainRoute();
   Backbone.history.start({pushState: true, root: document.location.pathname});
@@ -10,3 +10,17 @@ if(window.device && window.device.cordova){
 } else {
   $(initialize);
 }
+
+Handlebars.registerHelper('visibleClass', function(index){
+  var visibleClass = [];
+  if(index >= 2){
+    visibleClass.push('hidden-xs');
+  }
+  if(index >= 3){
+    visibleClass.push('hidden-sm');
+  }
+  if(index >= 4){
+    visibleClass.push('hidden-md');
+  }
+  return visibleClass.join(' ');
+});

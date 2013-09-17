@@ -19,7 +19,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></p>\n  </div>\n  <div class=\"hidden\">\n    <div class=\"response_content\">\n    </div>\n  </div>\n</div>";
+    + "</a></p>\n    <p class=\"response_content alert\">\n    </p>\n  </div>\n</div>";
   return buffer;
   });
 
@@ -53,7 +53,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.moreInfo) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.moreInfo; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\n      </p>\n      </div>\n    </div>\n</div>";
+    + "\n      </p>\n      </div>\n  </div>\n</div>";
   return buffer;
   });
 
@@ -91,7 +91,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.className) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.className; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\">\n      <a class=\"btn start-menu-item-icon btn-danger\">\n        <i class=\"icon-";
+    + "\">\n      <a class=\"btn start-menu-item-icon\">\n        <i class=\"icon-";
   if (stack1 = helpers.iconClass) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.iconClass; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -141,11 +141,11 @@ function program1(depth0,data) {
   buffer += "<nav class=\"navbar navbar-default\" role=\"navigation\">\n<div class=\"nav pull-left\">\n  <a class=\"btn back\"><i class=\"icon-chevron-left icon-2x\"></i></a>\n</div>\n<div class=\"navbar-title\" ";
   stack1 = helpers['if'].call(depth0, depth0.titleWidth, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += ">\n<p class=\"nav navbar-text\">";
+  buffer += ">\n<div class=\"nav navbar-text\">";
   if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</p>\n</div>\n</nav>";
+    + "</div>\n</div>\n</nav>";
   return buffer;
   });
 
@@ -185,13 +185,61 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return buffer;
   });
 
+this["App"]["Templates"]["weather-data"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, self=this, helperMissing=helpers.helperMissing, functionType="function", escapeExpression=this.escapeExpression;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n    <div class=\"col-xs-6 col-sm-4 col-md-3 col-lg-2 ";
+  options = {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data};
+  stack2 = ((stack1 = helpers.visibleClass || depth0.visibleClass),stack1 ? stack1.call(depth0, ((stack1 = data),stack1 == null || stack1 === false ? stack1 : stack1.index), options) : helperMissing.call(depth0, "visibleClass", ((stack1 = data),stack1 == null || stack1 === false ? stack1 : stack1.index), options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\">\n      <div class=\"container\">\n        <img src=\"";
+  if (stack2 = helpers.icon) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.icon; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\" class=\"img-circle\" />\n        <p>";
+  if (stack2 = helpers.date) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.date; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</p>\n        <p>";
+  if (stack2 = helpers.low) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.low; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + " - ";
+  if (stack2 = helpers.high) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.high; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + " (&deg;C)</p>\n        <p>";
+  if (stack2 = helpers.desc) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.desc; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</p>\n      </div>\n    </div>\n  ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "";
+  return buffer;
+  }
+
+  buffer += "<div class=\"row weather-info\">\n  ";
+  stack1 = helpers.each.call(depth0, depth0.data, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n</div>";
+  return buffer;
+  });
+
 this["App"]["Templates"]["weather"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += " <div class=\"content_view\">\n  <div class=\"container\">\n    <h1>";
+  buffer += " <div class=\"content_view weather_page\">\n  <div class=\"container\">\n    <h1>";
   if (stack1 = helpers.header) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.header; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -219,6 +267,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.getWeatherButtonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.getWeatherButtonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></p>\n      <p class=\"weather-info\"></p>\n    </div>\n  </div>\n</div>";
+    + "</a></p>\n    </div>\n    <p class=\"response_content\"></p>\n  </div>\n</div>";
   return buffer;
   });

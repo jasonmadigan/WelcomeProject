@@ -1,93 +1,122 @@
-body 
-{
-  
-}
+/** FeedHenry Theme **/
 
-#main_page
-{
+/** Pink Theme **/
+
+/*@base-color: #F50555;
+@btn-border-color: #EB0753;
+@btn-hover-color: #DF1132;
+@base-font-color: #FFF;
+@content-font-color: #000;
+@content-header-font-color: #000;*/
+
+#main_page {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
 }
 
-#main_page .row
-{
-  margin-right: 0px;
-  margin-left: 0px;
+#main_page .row {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .banner {
-  background-color: #F50555;
-  color: #FFF;
-  border: none;
-  border-radius: 0px;
-  margin-bottom: 10px;
   padding-bottom: 10px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  background-color: #7ea0b5;
+  border: none;
+  border-radius: 0;
 }
 
 .banner h1 {
   margin-top: 10px;
 }
+
 .banner p {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .start-menu-item {
-  height: 125px;
   width: 100%;
+  height: 125px;
   cursor: pointer;
 }
 
+.start-menu-item h5 {
+  color: #e02d01;
+}
+
+.start-menu-item h6 {
+  color: #535353;
+}
+
 .start-menu-item-icon {
+  display: block;
   width: 60px;
   height: 60px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #F50555;
-  border-radius: 50%;
-  display: block;
   padding-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #ffffff;
+  background-color: #7ea0b5;
+  border-color: #7ea0b5;
+  border-radius: 50%;
+}
+
+.start-menu-item-icon:hover {
+  color: #ffffff;
+  background-color: #5e7787;
 }
 
 .start-menu-item h5 {
   text-transform: uppercase;
 }
 
-.start-menu-item h5,h6 {
-  text-align: center;
+.start-menu-item h5,
+h6 {
   margin-top: 5px;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .navbar {
-  background-color: #F50555;
-  margin-bottom: 0px;
+  margin-bottom: 0;
+  background-color: #7ea0b5;
   border: none;
 }
 
 .navbar-default .navbar-text {
-  color: #FFF;
+  width: 100%;
+  color: #ffffff;
 }
 
 .navbar .btn.back {
-  color: #FFF;
   width: 75px;
   height: 50px;
   padding-top: 10px;
+  color: #ffffff;
 }
 
 .navbar-title {
   display: block;
   width: 100px;
-  margin-left: auto;
   margin-right: auto;
-  font-size: 1.1em;
+  margin-left: auto;
 }
 
 .content_view {
-  background-color: #FFF;
   padding: 15px;
   text-align: center;
+  background-color: #ffffff;
+}
+
+.content_view h1 {
+  color: #e02d01;
+}
+
+.content_view p {
+  color: #535353;
 }
 
 .content_view .btn {
@@ -95,10 +124,18 @@ body
 }
 
 .btn-primary {
-  background-color: #F50555;
-  border-color: #EB0753;
+  background-color: #7ea0b5;
+  border-color: #7ea0b5;
 }
 
 .btn-primary:hover {
-  background-color: #DF1132;
+  background-color: #5e7787;
+}
+
+.weather-info p {
+  margin-bottom: 0;
+}
+
+.weather-info img {
+  margin-bottom: 5px;
 }

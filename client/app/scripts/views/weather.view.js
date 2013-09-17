@@ -1,4 +1,4 @@
-/*global App, _, alert*/
+/*global App, _, $fh*/
 App.View.WeatherSampleView = App.View.BaseView.extend({
 
   template: App.Templates.weather,
@@ -19,7 +19,7 @@ App.View.WeatherSampleView = App.View.BaseView.extend({
       navigator.geolocation.getCurrentPosition(function(pos){
         self.gotLocation(pos);
       }, function(err){
-        alert('Failed to get location : ' + err.message + '(' + err.code + ')');
+        self.dataError('Failed to get location : ' + err.message);
       }, {
         enableHighAccuracy: true,
         timeout: 5000,
@@ -35,11 +35,23 @@ App.View.WeatherSampleView = App.View.BaseView.extend({
   },
 
   getWeatherData: function(){
-    //TODO: use $fh.act to get weather data
-    this.gotWeatherData();
+    var lat = this.coords.latitude;
+    var lon = this.coords.longitude;
+    var self = this;
+    $fh.act({
+      act:'getWeather',
+      req: {
+        lat: lat,
+        lon: lon
+      }
+    }, function(res){
+      self.gotWeatherData(res);
+    }, function(msg){
+      self.dataError(msg);
+    });
   },
 
-  gotWeatherData: function(){
-    this.$el.find('.weather-info').text('weather info here...');
+  gotWeatherData: function(data){
+    this.$el.find('.response_content').removeClass('alert-error').removeClass('alert').html(App.Templates['weather-data'](data));
   }
 });

@@ -123,7 +123,8 @@ module.exports = function(grunt) {
           compile: true
         },
         files: {
-          '<%= yeoman.app %>/css/main.css': ['<%= yeoman.app %>/css/main.less']
+          '<%= yeoman.app %>/css/main.css': ['<%= yeoman.app %>/css/main.less'],
+          '<%= yeoman.app %>/css/app.css': ['<%= yeoman.app %>/css/app.less']
         }
       }
     },
