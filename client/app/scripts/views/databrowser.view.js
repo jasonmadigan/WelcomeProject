@@ -1,4 +1,4 @@
-/*global App, _*/
+/*global App, _, $fh*/
 App.View.DatabrowserView = App.View.BaseView.extend({
 
   template: App.Templates.databrowser,
@@ -13,12 +13,35 @@ App.View.DatabrowserView = App.View.BaseView.extend({
   },
 
   saveData: function(){
-    //var userName = this.$el.find('#nameField').val();
-    //TODO: save data in the cloud
-    this.dataSaved();
+    var inputField = this.$el.find('#nameField');
+    var username = inputField.val();
+    var self = this;
+    if(!username || username === null || username === ''){
+      this.showError();
+    } else {
+      this.hideError();
+      $fh.act({act:'saveData', req: {collection: 'Users', 'document': {username: username}}}, function(res){
+        if(res && res.status === 'ok'){
+          self.dataSaved();
+        } else {
+          self.dataError('Server error');
+        }
+      }, function(err){
+        self.dataError(err);
+      });
+    }
+  },
+
+  showError: function(){
+    this.$el.find('.alert.hidden').removeClass('hidden').text('Please enter a name');
+    return;
+  },
+
+  hideError: function(){
+    this.$el.find('.alert').addClass('hidden').empty();
   },
 
   dataSaved: function(){
-    this.$el.find('.hidden').removeClass('hidden');
+    this.$el.find('.response_content').addClass('alert-success').removeClass('alert-danger hidden').text(this.model.toJSON().moreInfo);
   }
 });

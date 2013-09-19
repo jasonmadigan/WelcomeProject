@@ -45,15 +45,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.inputFieldLabel) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.inputFieldLabel; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\">\n      </div>\n    </form>\n    <p><a class=\"btn btn-primary btn-lg save-data\"><i class=\"icon-save\"></i> ";
+    + "\">\n      </div>\n    </form>\n    <p class=\"alert alert-danger hidden\"></p>\n    <p><a class=\"btn btn-primary btn-lg save-data\"><i class=\"icon-save\"></i> ";
   if (stack1 = helpers.buttonText) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.buttonText; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></p>\n    <div class=\"hidden\">\n      <p class=\"more-info\">\n        ";
-  if (stack1 = helpers.moreInfo) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.moreInfo; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\n      </p>\n      </div>\n  </div>\n</div>";
+    + "</a></p>\n    <p class=\"response_content alert\">\n    </p>\n  </div>\n</div>";
   return buffer;
   });
 
