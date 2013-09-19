@@ -1,5 +1,8 @@
-/*global App, Backbone, Handlebars*/
+/*global App, Backbone, Handlebars, MBP*/
 var initialize = function(){
+  MBP.preventZoom();
+  MBP.enableActive();
+  //FastClick.attach(document.body);
   App.routers.mainRoute = new App.Router.MainRoute();
   Backbone.history.start({pushState: true, root: document.location.pathname});
 };
@@ -24,3 +27,4 @@ Handlebars.registerHelper('visibleClass', function(index){
   }
   return visibleClass.join(' ');
 });
+

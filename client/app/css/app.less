@@ -5,6 +5,7 @@
 @base-font-color: #FFF;
 @content-font-color: #535353;
 @content-header-font-color: #E02D01;
+@base-background-color: #FFF;
 
 /** Pink Theme **/
 /*@base-color: #F50555;
@@ -14,11 +15,10 @@
 @content-font-color: #000;
 @content-header-font-color: #000;*/
 
-#main_page
+
+#page_view_container
 {
-  width: 100%;
-  height: 100%;
-  display: block;
+  background-color:@base-background-color;
 }
 
 #main_page .row
@@ -57,7 +57,7 @@
   color: @content-font-color;
 }
 
-.start-menu-item-icon {
+a.start-menu-item-icon {
   width: 60px;
   height: 60px;
   margin-left: auto;
@@ -68,9 +68,10 @@
   display: block;
   padding-top: 15px;
   color: @base-font-color;
+  text-decoration:none;
 }
 
-.start-menu-item-icon:hover {
+.start-menu-item-icon:active {
   background-color: @btn-hover-color;
   color: @base-font-color;
 }
@@ -83,6 +84,10 @@
   text-align: center;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.page_view {
+  background-color: @base-background-color;
 }
 
 .navbar {

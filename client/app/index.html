@@ -33,6 +33,7 @@
 
         <!-- build:css(.tmp) css/main.css -->
         <link rel="stylesheet" href="css/mobile.css">
+        <link rel="stylesheet" href="css/effeckt.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/app.css">
         <!-- endbuild -->
@@ -42,6 +43,8 @@
         <!-- build:js scripts/vendor.js -->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="js/helper.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/effeckt.js"></script>
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/handlebars/handlebars.runtime.js"></script>
@@ -78,7 +81,10 @@
         <script src="scripts/init.js"></script>
         <!-- endbuild -->
 
-        <div id="main_page" class="page">
+        <div id="main_page" class="page effeckt-page-active" data-effeckt-page="main_view_container">
+        </div>
+
+        <div id="page_view_container" data-effeckt-page="page_view_container">
         </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

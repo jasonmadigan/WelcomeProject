@@ -1,25 +1,30 @@
-/*global App, Backbone, _*/
+/*global App, Backbone, _, Effeckt*/
 App.View.MainView = Backbone.View.extend({
 
-  events: {
-    'click .cloud-action': 'cloudActionPage',
-    'click .data-browser': 'dataBrowserPage',
-    'click .nodejs-page': 'nodePage',
-    'click .cloud-integration': 'cloudIntegrationPage',
-    'click .weather-sample' : 'weatherPage',
-    'click .stats-analytics': 'analyticsPage',
-    'click .btn.back': 'backToIntro',
+  events: function(){
+    var eventName  = 'click';
+    var hash = {};
+    hash[eventName + ' .cloud-action'] = 'cloudActionPage';
+    hash[eventName + ' .data-browser'] = 'dataBrowserPage';
+    hash[eventName + ' .nodejs-page'] = 'nodePage';
+    hash[eventName + ' .cloud-integration'] = 'cloudIntegrationPage';
+    hash[eventName + ' .weather-sample'] = 'weatherPage';
+    hash[eventName + ' .stats-analytics'] = 'analyticsPage';
+    hash[eventName + ' .btn.back'] = 'backToIntro';
+    return hash;
   },
 
   initialize: function(){
-    this.$el = $('#main_page');
+    this.$el = $('body');
+    this.mainViewContainer = $('#main_page');
+    this.pageViewContainer = $('#page_view_container');
     _.bindAll(this, 'cloudActionPage', 'dataBrowserPage', 'nodePage', 'cloudIntegrationPage', 'weatherPage', 'analyticsPage', 'backToIntro');
   },
 
   render: function(){
     var introView = new App.View.IntroView();
     this.introView = introView.render();
-    this.$el.html(this.introView);
+    this.mainViewContainer.html(this.introView);
   },
 
   cloudActionPage: function(){
@@ -27,7 +32,7 @@ App.View.MainView = Backbone.View.extend({
       var cloudCallView = new App.View.CloudcallView();
       this.cloudCallView = cloudCallView.render();
     }
-    this.$el.html(this.cloudCallView);
+    this.showPage(this.cloudCallView);
   },
 
   dataBrowserPage: function(){
@@ -35,7 +40,7 @@ App.View.MainView = Backbone.View.extend({
       var databrowserView = new App.View.DatabrowserView();
       this.databrowserView = databrowserView.render();
     }
-    this.$el.html(this.databrowserView);
+    this.showPage(this.databrowserView);
   },
 
   nodePage: function(){
@@ -43,7 +48,7 @@ App.View.MainView = Backbone.View.extend({
       var nodeView = new App.View.NodeView();
       this.nodeView = nodeView.render();
     }
-    this.$el.html(this.nodeView);
+    this.showPage(this.nodeView);
   },
 
   cloudIntegrationPage: function(){
@@ -51,7 +56,7 @@ App.View.MainView = Backbone.View.extend({
       var integrationView = new App.View.IntegrationView();
       this.integrationView = integrationView.render();
     }
-    this.$el.html(this.integrationView);
+    this.showPage(this.integrationView);
   },
 
   weatherPage: function(){
@@ -59,7 +64,7 @@ App.View.MainView = Backbone.View.extend({
       var weatherView = new App.View.WeatherSampleView();
       this.weatherView = weatherView.render();
     }
-    this.$el.html(this.weatherView);
+    this.showPage(this.weatherView);
   },
 
   analyticsPage: function(){
@@ -67,10 +72,44 @@ App.View.MainView = Backbone.View.extend({
       var statsView = new App.View.StatsView();
       this.statsView = statsView.render();
     }
-    this.$el.html(this.statsView);
+    this.showPage(this.statsView);
+  },
+
+  showPage: function(toPage){
+    this.pageViewContainer.html(toPage);
+    this.doTransition(this.mainViewContainer, this.pageViewContainer, 'slide-from-right', 'slide-to-left');
   },
 
   backToIntro: function(){
-    this.$el.html(this.introView);
+    this.doTransition(this.pageViewContainer, this.mainViewContainer, 'slide-from-left', 'slide-to-right');
+  },
+
+  doTransition: function(fromPage, toPage, transitionInEffect, transitionOutEffect){
+    toPage.addClass('effeckt-page-animating effeckt-page-active');
+    fromPage.addClass('effeckt-page-active effeckt-page-animating');
+    fromPage.addClass(transitionOutEffect);
+    toPage.addClass(transitionInEffect);
+    var isNextPageEnd = false;
+    var isCurrentPageEnd = false;
+    var resetTransition = function(){
+      fromPage.removeClass('effeckt-page-animating effeckt-page-active ' + transitionOutEffect);
+      toPage.removeClass('effeckt-page-animating ' + transitionInEffect);
+    };
+
+    toPage.on( Effeckt.transitionAnimationEndEvent, function() {
+      toPage.off( Effeckt.transitionAnimationEndEvent );
+      isNextPageEnd = true;
+      if ( isCurrentPageEnd ) {
+        resetTransition();
+      }
+    });
+
+    fromPage.on( Effeckt.transitionAnimationEndEvent, function () {
+      fromPage.off( Effeckt.transitionAnimationEndEvent );
+      isCurrentPageEnd = true;
+      if ( isNextPageEnd ) {
+        resetTransition();
+      }
+    });
   }
 });
