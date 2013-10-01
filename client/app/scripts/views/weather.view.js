@@ -15,6 +15,7 @@ App.View.WeatherSampleView = App.View.BaseView.extend({
 
   getLocation: function(){
     var self = this;
+    self.dataReset();
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition(function(pos){
         self.gotLocation(pos);
