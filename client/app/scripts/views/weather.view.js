@@ -36,6 +36,7 @@ App.View.WeatherSampleView = App.View.BaseView.extend({
   },
 
   getWeatherData: function(){
+    self.dataReset();
     var lat = this.coords.latitude;
     var lon = this.coords.longitude;
     var self = this;

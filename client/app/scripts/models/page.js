@@ -6,14 +6,14 @@ App.Model.PageModel = Backbone.Model.extend({
 App.models.introPage = new App.Model.PageModel({
   title:'Welcome',
   header: 'Welcome To FeedHenry',
-  text: 'Welcome to FeedHenry, please follow this sequence of pages to learn more about our platform and interact with it',
+  text: 'Learn more about our platform and interact with it below.',
   nextButtonText: 'Let\'s Start',
-  menuItems: [{className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Cloud Action', menuSubTitle: 'Short Discription', responsiveClass: 'col-md-3 col-lg-2', iconClass:'cloud'},
-              {className: 'data-browser', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Data Browser', menuSubTitle: 'Short Discription', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'table'},
-              {className: 'nodejs-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Powered By Nodejs', menuSubTitle: 'Short Discription', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'bolt'},
-              {className: 'cloud-integration', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Cloud Integration', menuSubTitle: 'Short Discription', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'gears'},
-              {className: 'weather-sample', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Example', menuSubTitle: 'Short Discription', responsiveClass: 'col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-0', iconClass: 'sun'},
-              {className: 'stats-analytics', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Analytics Engine', menuSubTitle: 'Short Discription', responsiveClass: 'col-md-2 col-md-offset-4 col-lg-2 col-lg-offset-0', iconClass: 'bar-chart'} ]
+  menuItems: [{className: 'cloud-action', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Cloud Action', menuSubTitle: 'Try our live Cloud code', responsiveClass: 'col-md-3 col-lg-2', iconClass:'cloud'},
+              {className: 'data-browser', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Data Browser', menuSubTitle: 'Use MongoDB', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'table'},
+              {className: 'nodejs-page', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Powered By Nodejs', menuSubTitle: 'Create Cloud code', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'bolt'},
+              {className: 'cloud-integration', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Cloud Integration', menuSubTitle: 'Connect to other services', responsiveClass: 'col-md-3 col-lg-2', iconClass: 'gears'},
+              {className: 'weather-sample', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Example', menuSubTitle: 'Use Location and Weather', responsiveClass: 'col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-0', iconClass: 'sun'},
+              {className: 'stats-analytics', imgPath: '/img/touch/apple-touch-icon.png', menuTitle: 'Analytics Engine', menuSubTitle: 'Instrument your App', responsiveClass: 'col-md-2 col-md-offset-4 col-lg-2 col-lg-offset-0', iconClass: 'bar-chart'} ]
 });
 
 App.models.cloudcallPage = new App.Model.PageModel({
