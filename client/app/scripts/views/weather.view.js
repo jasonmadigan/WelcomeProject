@@ -36,10 +36,10 @@ App.View.WeatherSampleView = App.View.BaseView.extend({
   },
 
   getWeatherData: function(){
+    var self = this;
     self.dataReset();
     var lat = this.coords.latitude;
     var lon = this.coords.longitude;
-    var self = this;
     $fh.act({
       act:'getWeather',
       req: {
