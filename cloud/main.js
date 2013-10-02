@@ -2,7 +2,8 @@ var getWeather = require('./weather').getWeather;
 var saveData = require('./databrowser').saveData;
 
 exports.hello = function(params, callback){
-  return callback(null, {text: 'Hello from FeedHenry'});
+  var hostSpecificResponse = "Hello from the FeedHenry Cloud App named " + process.env.FH_APPNAME;
+  return callback(null, {text: hostSpecificResponse});
 };
 
 exports.getWeather = function(params, callback){
